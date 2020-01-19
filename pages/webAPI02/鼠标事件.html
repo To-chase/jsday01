@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .contain{
+        opacity: 0;
+        transition: all 1s ease;
+    }
+    .contain div{
+        width: 120px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        border: 1px solid blue;
+        cursor: pointer;
+    }
+</style>
+<body>
+<div class="contain">
+    <div>鼠标单击</div>
+    <div>鼠标双击</div>
+    <div>鼠标移上(移入)</div>
+    <div>鼠标移上(移出)</div>
+    <div>鼠标移动</div>
+    <div>鼠标按下</div>
+    <div>鼠标弹起</div>
+</div>
+<input type="button" value="按钮">
+</body>
+<script>
+    var div=document.querySelector(".contain");
+    console.log(div);
+    var btn=document.querySelector("input");
+    console.log(btn)
+    btn.onmouseover=function () {
+       div.style.opacity="1";
+    }
+
+    btn.onmouseout=function () {
+      div.style.opacity="0";
+    }
+    // div[0].onclick=function () {
+    //     alert("鼠标单击");
+    // }
+    //
+    // div[1].ondblclick=function () {
+    //     alert("双击关注，6666");
+    // }
+    // div[2].onmouseover=function () {
+    //     console.log("移入");
+    // }
+    // div[3].onmouseout=function () {
+    //     console.log("移出");
+    // }
+    // div[4].onmousemove=function () {
+    //     console.log("鼠标移动");
+    // }
+    // div[5].onmousedown=function () {
+    //     console.log("按下")
+    // }
+    // div[6].onmouseup=function () {
+    //     console.log("弹起")
+    // }
+</script>
+</html>

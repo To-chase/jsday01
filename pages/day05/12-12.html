@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    //第一题
+    function verifly() {
+
+        var arr=["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","n","m","o","p","q","r","s","t","u","v","w","x","y","z"];
+        var rand1=Math.floor(Math.random()*arr.length);
+        var rand2=Math.floor(Math.random()*arr.length);
+        var rand3=Math.floor(Math.random()*arr.length);
+        var rand4=Math.floor(Math.random()*arr.length);
+        return arr[rand1]+arr[rand2]+arr[rand3]+arr[rand4];
+    }
+
+    var verifly = verifly();
+    // console.log(verifly);
+
+
+    //第二题
+    // var num = 1;
+    // function demo(){
+    //         console.log(num);
+    //     function demoSon(){
+    //         console.log(num);
+    //         num = 3;
+    //         console.log(num);
+    //     }
+    //         var num = 2;
+    //         demoSon();
+    //     }
+    // demo();
+    /*script标签的代码从上往下执行；
+    * 1.先执行var num=1；定义一个变量num并赋值为1；
+    * 2.继续往下执行
+    * 3.没有调用函数demo，跳过函数demo不执行
+    * 4.遇到demo();函数demo被调用
+    *
+    * 进入到函数demo里面，继续往下执行代码
+    * 首先输出num的值:undefined；
+    * 原因是:demo函数被调用后，进入函数demo内是先预解析var num变量,
+    * 代码从上往下执行,第一个console.log(),预解析只是先声明var变量，不会赋值，所以输出的是undefined
+    * 继续往下执行代码
+    * 函数demoSon没有被调用,跳过函数demoSon
+    * var num=2;num赋值为2；
+    * 调用代码demoSon()
+    * 进入函数demoSon()内
+    * demoSon()没有声明新的变量
+    * 函数demoSon()的第一个console.log(num)为2;
+    * 由于作用链的作用
+    * 往上一层找num，找到var num=2；
+    * 函数demoSon()的第二个console.log(num)为3;
+    * num = 3是赋了新值，覆盖前面的num值
+    * */
+
+
+    //第三题
+
+    function includes1(data,arr1) {
+        var flag=false;
+       for(var i=0;i<arr1.length;i++){
+           if(data===arr1[i]){
+              flag=true;
+              break;
+           }
+               flag=false;
+       }
+       console.log(flag);
+       return flag;
+    }
+
+    var arr1=[1,5,6,8,0];
+    var data=+prompt("请输入一个数!");
+    var flag=includes1(data,arr1);
+    console.log(flag);
+    if (flag===true){
+        console.log("数据"+data+"存在数组arr1");
+    }else {
+        console.log("数据"+data+"不存在数组arr1");
+    }
+
+    //第四题
+    function includes(arr,currentArr) {
+        var cont=0;
+        var cull=[];
+        for(var i=0;i<arr.length;i++){
+            for(var x=0;x<currentArr.length;x++){
+                if(arr[i]===currentArr[x]){
+                    cont+=1;
+                }
+
+            }
+
+            if(cont===0){
+                cull[cull.length]=arr[i];
+            }else{
+                cont=0;
+            }
+        }
+
+          return cull;
+    }
+    var arr = ["张瑞淑", "徐海涛", "谢岗岗", "薛鹏", "魏明杨", "党婷", "熊飞", "郑翠翠", "李航卫", "屈涛", "汪孝双", "代攀飞", "武志钰", "王亚龙", "周芙榕", "李涛", "郝颖", "文冲洋", "王旭拯", "胡佳豪", "寇晓丽", "马晓晗","王思聪", "张绿", "李德", "郑萍", "张凯", "张嘉成", "葛云侠", "杨磊", "任变", "景德", "高卷林", "刘益凡", "赵娜", "陈章鸣", "张荣召", "赵凯旋", "程倩倩", "脱朝平", "刘吉利", "郭苗苗", "马建峰", "潘瑞", "闫翔", "马晨", "李轩轩", "黄红梅", "刘书彬", "罗强", "刘东","王可可","陈泽文", "李嘉琪", "段佳琦", "黄燕", "邱淑鸿", "宋翔宇", "王波", "樊琳", "王兆国", "许成", "李兴"];
+    var currentArr = ["徐海涛", "谢岗岗", "魏明杨", "党婷", "熊飞", "郑翠翠", "李航卫", "屈涛", "汪孝双", "代攀飞", "武志钰", "王亚龙", "周芙榕", "李涛", "郝颖", "文冲洋", "王旭拯", "胡佳豪", "寇晓丽", "马晓晗", "张绿", "李德","郑萍", "张凯", "张嘉成", "葛云侠", "杨磊", "任变", "景德", "高卷林", "刘益凡", "赵娜", "陈章鸣", "张荣召", "赵凯旋", "程倩倩", "脱朝平", "刘吉利", "郭苗苗", "马建峰", "潘瑞", "闫翔", "马晨", "李轩轩", "黄红梅", "刘书彬", "罗强", "刘东", "陈泽文", "李嘉琪", "段佳琦", "黄燕", "邱淑鸿", "宋翔宇", "王波", "樊琳", "王兆国", "许成", "李兴"];;
+
+    var current1 = includes(arr,currentArr);
+    console.log(current1);
+
+    //3
+    // var number=+prompt("请输入一个四位数");
+    //
+    // var ge=number%10;
+    // console.log(ge);
+    // var shi=parseInt(number/10)%10;
+    // console.log(shi);
+    // var bai=parseInt(number/100)%10;
+    // console.log(bai);
+    // var qing=parseInt(number/1000)%10;
+    // console.log(qing);
+    // var arr4=[ge,shi,bai,qing];
+    // console.log(arr4);
+    // var arr5=[];
+    // for(var i=3;i>=0;i--){
+    //     arr4[i]+=5;
+    //     var num=arr4[i]%10;
+    //     console.log(num);
+    //     arr5[arr5.length]=num;
+    //
+    // }
+    // // console.log(arr5);
+    // var re = 1000*arr5[0]+100*arr5[1]+10*arr5[2]+arr5[3];
+    // console.log(re);
+
+
+
+</script>
+<body>
+
+</body>
+</html>

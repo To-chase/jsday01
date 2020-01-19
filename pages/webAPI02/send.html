@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .write{
+        width: 87%;
+        height: 180px;
+        /*margin: 0 auto;*/
+        position: relative;
+        top: 25px;
+        left: 45px;
+        display: block;
+        /*position: relative;*/
+        /*top: 0;*/
+        border: 1px solid #cccccc;
+        outline-style: none;
+    }
+
+
+    .box{
+        margin: 0 auto;
+        width: 40%;
+        height: 400px;
+        border: 1px solid #cccccc;
+        position: relative;
+        overflow: hidden;
+    }
+    .send{
+        background: orange;
+        width: 85px;
+        height: 40px;
+        border-radius: 8px;
+        /*position: absolute;*/
+        /*bottom: 134px;*/
+        left: 40px;
+        position: relative;
+        bottom: -47px;
+
+    }
+
+    .box ul{
+        position: relative;
+        bottom: 73px;
+        left: 10px;
+        margin: 0 auto;
+        position: relative;
+        bottom: -60px;
+    }
+
+    .box ul li{
+        width: 650px;
+        list-style: none;
+        margin: auto;
+        border-bottom: 1px dashed #cccccc;
+        text-align: left;
+        overflow: hidden;
+    }
+
+    .message{
+        width: 650px;
+        /*height: 100px;*/
+        height: auto;
+        position: relative;
+        bottom: 0;
+    }
+
+    .open{
+        position: relative;
+        bottom: -17px;
+        left: 135px;
+        opacity: 0;
+        border:1px solid red;
+    }
+
+    .open img{
+        position: relative;
+        bottom: -3px;
+        left: 135px;
+        border:1px solid red;
+        cursor:pointer;
+    }
+
+    .box li input{
+       float: right;
+    }
+
+    .smail{
+        width: 21px;
+        height: 21px;
+        display: block;
+        background: url("img/01.gif")no-repeat;
+        position: absolute;
+        bottom: 134px;
+        left: 143px;
+    }
+</style>
+<body>
+<!--<div class="til">字数统计</div>-->
+<div class="box">
+    <!--<textarea></textarea>-->
+    <div class="write" contenteditable="true"></div>
+    <input type="button" value="发布" class="send">
+    <span class="smail"></span>
+    <div class="open">
+        <img src="img/02.gif" alt="">
+        <img src="img/03.gif" alt="">
+        <img src="img/04.gif" alt="">
+        <img src="img/05.gif" alt="">
+        <img src="img/06.gif" alt="">
+        <img src="img/07.gif" alt="">
+        <img src="img/05.gif" alt="">
+        <img src="img/08.gif" alt="">
+        <img src="img/09.gif" alt="">
+        <img src="img/10.gif" alt="">
+        <img src="img/11.gif" alt="">
+        <img src="img/12.gif" alt="">
+    </div>
+    <div class="message">
+        <ul>
+            <li>
+                快来收了这九款用上就停不下来的应用吧！！
+                <input type="button" value="删除">
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+    var text = document.querySelector(".write");
+    var ul=document.querySelector("ul");
+    var send=document.querySelector(".send");
+
+
+    var img=document.querySelectorAll(".open img");
+    var smail=document.querySelector(".smail");
+    var open=document.querySelector(".open");
+    console.log(open);
+     var flag=true;
+    smail.onclick=function(){
+        if(flag){
+            open.style.opacity="1";
+            flag=false;
+        }else {
+            open.style.opacity="0";
+            flag=true;
+        }
+
+    }
+    text.focus=function(){
+        text.style.borderColor
+            ="red";
+    }
+
+    text.onkeydown=function(ev){
+        if(ev.keyCode===13){
+            var values=text.innerHTML;
+            var lenght=values.length;
+            if (lenght===0) {
+                alert("发送信息不能为空~~~~~");
+            }else if(lenght<120){
+                var lis=document.querySelectorAll("ul li");
+                var del=document.createElement("input");
+                var num=lis.length-1;
+                del.type="button";
+                del.value="删除";
+                del.name=num;
+                var li = document.createElement("li");
+                console.log(text.innerHTML);
+                li.innerHTML=text.innerHTML;
+                text.innerHTML="";
+                li.appendChild(del);
+                ul.appendChild(li);
+                console.log(li);
+                var list=document.querySelectorAll("ul li input");
+                list.forEach(function (input) {
+                    input.onclick=function () {
+                        input.parentElement.parentElement.removeChild(input.parentElement);
+                    }
+                })
+            }else {
+                alert("字数过长~~~");
+                text.value="";
+            }
+        }
+    }
+
+
+    send.onclick=function(){
+        var values=text.innerHTML.trim();
+        var lenght=values.length;
+        if (text.innerHTML=="") {
+            alert("发送信息不能为空~~~~~");
+        }else if(lenght<120){
+            var lis=document.querySelectorAll("ul li");
+            var del=document.createElement("input");
+            var num=lis.length-1;
+            del.type="button";
+            del.value="删除";
+            del.name=num;
+            var li = document.createElement("li");
+            console.log(text.innerHTML);
+            li.innerHTML=text.innerHTML;
+            text.innerHTML="";
+            li.appendChild(del);
+            ul.appendChild(li);
+            var list=document.querySelectorAll("ul li input");
+            list.forEach(function (input) {
+                input.onclick=function () {
+                    input.parentElement.parentElement.removeChild(input.parentElement);
+                }
+            })
+        }else {
+            alert("字数过长~~~");
+            text.innerHTML="";
+        }
+    }
+
+    img.forEach(function (value) {
+        value.onclick=function () {
+            var node = value.cloneNode();
+            console.log(node);
+            text.appendChild(node);
+        }
+    })
+
+
+
+
+
+
+</script>
+</html>

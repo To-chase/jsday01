@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/name.css">
+</head>
+<body>
+  <div class="choose">
+      <div class="btn">
+          <input type="button" value="开始" class="start" onclick="start()">
+          <input type="button" value="结束" class="end" onclick="end()">
+      </div>
+      <div class="names">
+          <ul class="ul">
+
+          </ul>
+      </div>
+  </div>
+</body>
+<script>
+    var arr=['蔡青蓝','邓姗姗','房政','黄文雄',
+        '黄文雄','胡毅','侯艳杰','简俊文','李桥坚'
+        ,'梁志鸿','文豪','文豪','梁德柱','辛振基',
+        '曹聪','罗苑浩','张腈杰','缪锦链','张鹏'];
+    var time;
+    var index=-1;
+        for(var i=0;i<arr.length;i++){
+            var ul=document.querySelector(".ul");
+            var li=document.createElement("li");
+            li.id="li"+i;
+            li.className="li_name";
+            li.innerHTML=arr[i];
+            ul.appendChild(li);
+        }
+
+    function start() {
+            if(index!=-1){
+                var li=document.getElementById("li"+index);
+                li.style.backgroundColor="white";
+            }
+        var random=Math.floor(Math.random()*arr.length);
+
+        index=random;
+        // li.style.backgroundColor="aqua";
+        var to_li=document.getElementById("li"+random);
+        clearTimeout(time);
+        to_li.style.backgroundColor="aqua";
+        time = setTimeout("start()",60);
+    }
+
+
+    //结束
+
+    function end() {
+        clearTimeout(time);
+    }
+
+</script>
+</html>

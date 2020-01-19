@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*body{*/
+            /*position: relative;*/
+        /*}*/
+        img{
+            position: relative;
+
+        }
+    </style>
+</head>
+
+<body>
+<img src="img/12.gif" class="img">
+</body>
+<script>
+    var img=document.querySelector("img");
+    document.onmousemove=function (ev) {
+        console.log(ev.clientX);
+        console.log(ev.clientY);
+        img.style.top=ev.clientY+"px";
+        img.style.left=ev.clientX+"px";
+    }
+</script>
+</html>

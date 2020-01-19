@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    var arr = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"];
+    var newArr=[];
+    // var num1=Math.floor(Math.random()*arr.length);
+    // newArr[newArr.length]=arr[num1];
+    // // console.log(newArr);
+    // arr.splice(num1,1);
+
+    for(var i=0;i<4;i++){
+        var num2=Math.floor(Math.random()*arr.length);
+        newArr[newArr.length]=arr[num2];
+        arr.splice(num2,1);
+    }
+    // console.log(arr);
+    // console.log(newArr);
+    // document.write(arr+"<br>");
+    // document.write("随机的四个人:"+newArr);
+
+    var person = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"];
+    person.sort();
+    console.log(person);
+
+
+
+</script>
+<body>
+
+</body>
+</html>

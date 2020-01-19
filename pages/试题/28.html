@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    var answer=["A","D","B","C","D"];
+
+    for(var x=0;x<4;x++){
+        var count=0;
+        for(var i=0;i<answer.length;i++){
+            var an=prompt("第"+(x+1)+"位同学的第"+(i+1)+"题答案:");
+            if(an===answer[i]){
+                count+=2;
+            }
+        }
+        document.write("第"+(x+1)+"位同学分数为:"+count+"<br>");
+    }
+    // console.log(count)
+
+</script>
+<body>
+
+</body>
+</html>

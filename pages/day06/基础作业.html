@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    //基础作业:数组操作
+    var arr = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"];
+    arr.splice(0,1);//前删
+    arr.splice(0,0,"赵本山");//前加
+    // arr.splice(-1,1);
+    arr.splice(arr.length-1,1);//后删
+    arr.splice(arr.length,0,"鹿晗");//后加
+    // console.log(arr);
+
+    //基础作业:驼峰命名转换
+    // function toCamelCase(str) {
+    //     var number1= str.indexOf("-",0);
+    //     var number2=str.indexOf("-",number1+1);
+    //     var number3=str.indexOf("-",number2+1);
+    // }
+    //.split()   split() 方法用于把一个字符串分割成字符串数组。
+    // .toUpperCase()   大写
+    // .slice()  slice() 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。
+
+    //调用toCamelCase
+    // var str=toCamelCase('get-element-by-id');
+      var str="get-element-by-id";
+      console.log(toString().length);
+      var number1= str.indexOf("-",0);
+      console.log(number1);
+      console.log(str);
+      var number2=str.indexOf("-",number1+1);
+       console.log(str[number2].toUpperCase());
+      console.log(str[number2]);
+      var number3=str.indexOf("-",number2+1);
+      console.log(number3);
+      console.log(str[number3]);
+
+
+
+
+
+
+
+
+
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    //随机生成数字
+    function randomInt(num=256) {
+        return Math.floor(Math.random()*num);
+    }
+
+    //随机生成rgb
+    function rgb() {
+        var r=randomInt();
+        var g=randomInt();
+        var b=randomInt();
+        return "rgb("+r+","+g+","+b+")";
+    }
+
+    var rgb1 = rgb();
+    console.log(rgb1);
+</script>
+<body>
+
+</body>
+</html>

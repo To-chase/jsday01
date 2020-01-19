@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    var much=100;
+    var less;
+    while(true){
+        var choose=+prompt("请输入你要的操作:\n"+
+            "1.存钱\n"+"2.取钱\n"+"3.显示余额\n"+"4退出");
+        if(choose==1){
+            less=+prompt("存钱");
+            console.log(less);
+            much+=less;
+            alert("余额为:"+much);
+        }else if(choose==2){
+            console.log(much);
+             var pase=+prompt("取钱");
+             much-=pase;
+             alert("余额为:"+much);
+             }else if(choose==3){
+            alert(much);
+        }else if(choose==4){
+            break;
+        }
+        }
+</script>
+<body>
+
+</body>
+</html>

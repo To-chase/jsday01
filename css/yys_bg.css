@@ -1,0 +1,43 @@
+.bg{
+    width: 203px;
+    height: 600px;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+}
+
+.img{
+    width: 203px;
+    height: 461px;
+    position: absolute;
+    right: 0;
+    transition: all 1s ease;
+}
+
+.bg_tu{
+    width: 203px;
+    height: 461px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+}
+
+.jt{
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 78px;
+    right: 165px;
+
+}
+
+.img span{
+    width: 10px;
+    height: 20px;
+    color: white;
+    position: absolute;
+    right: 175px;
+    top: 110px;
+    cursor: pointer;
+}

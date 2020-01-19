@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .main {
+        width: 350px;
+        height: 350px;
+        margin: 100px;
+        border: 1px solid #ccc;
+        position: relative;
+    }
+
+    .big {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        top: 0;
+        left: 360px;
+        border: 1px solid #ccc;
+        overflow: hidden;
+        display: none;
+    }
+
+    .mask {
+        width: 175px;
+        height: 175px;
+        background: rgba(255, 255, 0, 0.4);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        /* 把鼠标指针换成移动图标 */
+        cursor: move;
+        display: none;
+    }
+
+    .small {
+        position: relative;
+        height: 350px;
+        width: 350px;
+    }
+
+    .active .mask,
+    .active .big {
+        display: block;
+    }
+
+    .big img {
+        /* 相对定位：相对自己原本的位置定位，原来的位置保留的 */
+        position: absolute;
+    }
+</style>
+<body>
+
+<!-- 整个大盒子 -->
+<div class="main" id="main">
+    <div class="small">
+        <!--小图-->
+        <img alt="" class="smallImg" src="img/iphoneX.jpg" width="350" />
+        <!-- 遮挡层,黄色的小方块 -->
+        <div class="mask"></div>
+    </div>
+    <!--大层-->
+    <div class="big">
+        <!--大图-->
+        <img alt="" class="bigImg" src="img/iphoneX.jpg" width="800" />
+    </div>
+</div>
+</body>
+<script>
+    var main = document.querySelector(".main");
+    var small = document.querySelector(".small");
+    var smallImg = document.querySelector(".smallImg");
+    var mask = document.querySelector(".mask");
+    var big = document.querySelector(".big");
+    var bigImg = document.querySelector(".bigImg");
+
+    small.onmouseover=function () {
+        mask.style.display="block";
+        big.style.display="block";
+
+    }
+
+    small.onmouseout=function () {
+        mask.style.display="none";
+        big.style.display="none";
+    }
+
+    small.onmousemove=function (ev) {
+        // var px=ev.pageX;
+        // var py=ev.pageY;
+        var px=ev.pageY-100-175/2;//减去大盒子main的外左边距100px和遮罩层的一半
+        var py=ev.pageX-100-175/2;//减去大盒子main的外上边距100px和和遮罩层的一半
+        if(px<0) px=0;
+        if(py<0) py=0;//遮罩层的的xy都不能为负数，不然会超出
+        if(px>350-175) px=350-175;
+        if(py>350-175)  py=350-175;//遮罩层的的xy最大不超过350-175，不然会超出
+        mask.style.top=px+"px";
+        mask.style.left=py+"px";
+        bigImg.style.top=-(800/350)*px+"px";
+        bigImg.style.left=-(800/350)*py+"px";
+    }
+
+
+
+</script>
+</html>
+

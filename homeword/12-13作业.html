@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //第一题
+    var arr = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"];
+    var s1 = arr.shift();
+    var s2 = arr.pop();
+    arr.unshift(s2);
+    arr.push(s1);
+    // console.log(arr);
+
+
+
+    //第二题
+    function toCamelCase(str) {
+        var str1 = [];
+        for (var i = 0; i< str.length;i++){
+            if (str[i] !== "-"){
+                str1[i] = str[i];
+            }
+            else{
+                str1[i+1] = str[i+1].toUpperCase();
+                i += 1;
+            }
+        }
+        return str1;
+    }
+    function zhuan(arr){
+        var str = "";
+        var arr = arr.filter(function (value) {
+            return value !== "";
+        });
+        // console.log(arr);
+        for (var i = 0; i<arr.length;i++){
+            if (arr[i] !== "," || arr[i] !== false) {
+                str+=arr[i];
+            }
+        }
+        return str;
+    }
+
+    var s = toCamelCase('get-element-by-id');
+    // console.log(s);
+    var s1 = zhuan(s);
+    // console.log(s1);
+
+//第三题
+    var arr = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"];
+
+    function rant(arr) {
+        var a1 = [];
+        for (var i = 0; i<4; i++){
+            var r1 = Math.floor(Math.random()*arr.length);
+            a1[a1.length] = arr[r1];
+            arr.splice(r1,1);
+        }
+        return a1;
+    }
+  // console.log(rant(arr));
+
+    //第四题
+
+    var arr2 = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"];
+    function wash(arr) {
+        var index = 0;
+        for (var x=0; x<arr.length; x++){
+            index=Math.floor(Math.random()*arr.length);
+            temp=arr[x];
+            arr[x]=arr[index];
+            arr[index]=temp;
+        }
+        return arr;
+    }
+    // console.log(wash(arr2));
+
+
+
+</script>
+</html>

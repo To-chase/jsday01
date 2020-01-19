@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    td{
+        border: 1px solid black;
+    }
+
+    td:hover{
+        background-color: blue;
+    }
+</style>
+<script>
+
+    var sum=0;
+    for(var i=0;i<=100;i++){
+        if(i%3==0&&i%7==0){
+            sum+=i;
+        }
+    }
+
+    document.write("1.1:100以内所有能被3和7整除的数的和:"+sum)
+    document.write("<br>");
+
+
+
+    for(var i=1;i<=10;i++){
+
+        for(var x=1;x<=10;x++){
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+
+
+
+    document.write("<br>");
+    document.write("1.3:九九乘法表");
+    document.write("<table>")
+    for(var x=1;x<=9;x++){
+        document.write("<tr>")
+
+        for(var y=1;y<=x;y++){
+            document.write("<td>")
+            document.write(y+"*"+x+"="+(y*x)+"&nbsp");
+            document.write("</td>")
+        }
+        document.write("</tr>")
+    }
+    document.write("</table>")
+
+
+    document.write("<br>");
+
+    var sum1=0;
+    for(var i=1;i<=100;i++){
+        if(i%10!=3){
+            sum1+=i;
+        }
+    }
+    document.write("1.5:1-100之间个位数不为3的数的累加和:"+sum1);
+
+
+
+</script>
+<body>
+
+</body>
+</html>

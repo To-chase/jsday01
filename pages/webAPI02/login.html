@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    /* 自定义字体图标类型 */
+    @font-face {
+        font-family: 'iconfont';
+        src: url('fonts/iconfont.eot');
+        src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/iconfont.woff2') format('woff2'),
+        url('fonts/iconfont.woff') format('woff'),
+        url('fonts/iconfont.ttf') format('truetype'),
+        url('fonts/iconfont.svg#iconfont') format('svg');
+    }
+
+    /* 调用自定义字体图标的类型 */
+    .iconfont {
+        font-family: 'iconfont';
+    }
+
+    .login{
+        width: 400px;
+        height: 300px;
+        /*position: relative;*/
+        border: 1px solid black;
+        display: block;
+        margin: 0 auto;
+        /*top: 100px;*/
+    }
+
+    h3{
+        text-align: center;
+    }
+    /*.login:last-child{*/
+    /*width: 360px;*/
+    /*!*text-align: center;*!*/
+    /*text-align: center;*/
+    /*}*/
+    .btn{
+        width: 180px;
+        height: 40px;
+    }
+    .login input{
+        margin-left: 20px;
+        /*text-align: center;*/
+        width: 350px;
+        height: 40px;
+        margin-top: 10px;
+
+    }
+    .del{
+        width: 20px;
+        height: 20px;
+        border: 1px solid black;
+        border-radius: 50%;
+        position: absolute;
+        float: right;
+        top: -10px;
+        right: -8px;
+
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="login">
+    <span class="del">
+        <i class="iconfont">&#xe69a;</i>
+    </span>
+    <h3>登录框</h3>
+    <input type="text" placeholder="用户名" name="username" class="name">
+    <input type="password" placeholder="密码" name="password"  class="pass">
+    <div class="btn">
+        <input type="button" value="登录" class="login">
+        <input type="button" value="注册" class="register">
+    </div>
+
+</div>
+</body>
+<script>
+    var register=document.querySelector(".register");
+    register.onclick=function () {
+        window.open("register.html");
+    }
+
+    var username=document.querySelector(".name");
+    var password=document.querySelector(".pass");
+    var  btn=document.querySelector(".btn input");
+    btn.onclick=function () {
+        var value1 = username.value;
+        var value2=password.value;
+        if(value1==""||value2==""){
+            alert("用户名密码不能为空");
+        }else if(value1=="admin"&&value2=="123456"){
+            alert("登录成功");
+            window.open("sends1.html");
+        }else if(value1=="admin"&&value2!=="123456"){
+            alert("密码错误");
+            password.value="";
+        }
+
+    }
+</script>
+</html>

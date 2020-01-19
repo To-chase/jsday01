@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    var arr=[1,2,3,4,5];
+    document.write("反转前:"+arr+"<br>");
+    var num=parseInt(arr.length/2);
+    for(var i=0;i<num;i++){
+        var temp=arr[i];
+        arr[i]=arr[arr.length-1-i];
+        arr[arr.length-1-i]=temp;
+    }
+    document.write("反转后:"+arr+"<br>");
+
+
+    var arr=[1,2,3,4];
+    var max=arr[0];
+    for(var i=1;i<arr.length;i++){
+        if(arr[i]>max){
+            max=arr[i];
+        }
+    }
+    document.write("最大值:"+max+"<br>");
+
+
+    var arr=[1,2,3,4];
+    var min=arr[0];
+    for(var i=1;i<arr.length;i++){
+        if(arr[i]<max){
+            max=arr[i];
+        }
+    }
+    document.write("最小值:"+min);
+</script>
+<body>
+
+</body>
+</html>

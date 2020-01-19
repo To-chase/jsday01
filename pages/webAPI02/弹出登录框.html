@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /* 自定义字体图标类型 */
+    @font-face {
+        font-family: 'iconfont';
+        src: url('fonts/iconfont.eot');
+        src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/iconfont.woff2') format('woff2'),
+        url('fonts/iconfont.woff') format('woff'),
+        url('fonts/iconfont.ttf') format('truetype'),
+        url('fonts/iconfont.svg#iconfont') format('svg');
+    }
+
+    /* 调用自定义字体图标的类型 */
+    .iconfont {
+        font-family: 'iconfont';
+    }
+    .top{
+        position: relative;
+        left: 40%;
+        cursor: pointer;
+    }
+    .top span{
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .login{
+        width: 400px;
+        height: 280px;
+        /*position: relative;*/
+        position: absolute;
+        border: 1px solid black;
+        display: none;
+    }
+
+    h3{
+        text-align: center;
+    }
+    /*.login:last-child{*/
+        /*width: 360px;*/
+        /*!*text-align: center;*!*/
+        /*text-align: center;*/
+    /*}*/
+    .btn{
+        width: 180px;
+        height: 40px;
+    }
+    .login input{
+        margin-left: 20px;
+        /*text-align: center;*/
+        width: 350px;
+        height: 40px;
+        margin-top: 10px;
+
+    }
+    .del{
+        width: 20px;
+        height: 20px;
+        border: 1px solid black;
+        border-radius: 50%;
+        position: absolute;
+        float: right;
+        top: -10px;
+        right: -8px;
+
+    }
+</style>
+<body>
+<div class="top">
+    <span>点一下,弹出登录框</span>
+</div>
+
+<div class="login">
+    <span class="del">
+        <i class="iconfont">&#xe69a;</i>
+    </span>
+    <h3>登录框</h3>
+    <input type="text" placeholder="用户名" name="username" class="name">
+    <input type="password" placeholder="密码" name="password"  class="pass">
+    <div class="btn">
+        <input type="button" value="登录">
+    </div>
+
+</div>
+
+</body>
+<script>
+  var top = document.querySelector(".top");
+  var login=document.querySelector(".login");
+  top.onclick=function () {
+      login.style.display="block";
+  }
+
+ login.onmousedown=function(ev){
+       var lcx=ev.clientX;//鼠标点击登录框的位置
+       var lcy=ev.clientY;
+       console.log(lcx+","+lcy);
+       var lx=login.offsetTop;//登录框的开始距离上边位置
+       var ly=login.offsetLeft;//登录框的开始左边位置
+       console.log(lx+","+ly);
+       var left=lcx-lx;
+       var top=lcy-ly;//偏移的值
+       console.log(left+","+top)
+      document.onmousemove=function (ev) {
+           var x=ev.clientX-180;
+           var y=ev.clientY-120;
+           // console.log(x+","+y);
+          if(x<0) x=0;
+          if(y<0) y=0;
+          if(x>1514) x=1514;
+          login.style.top=y-top+"px";
+          login.style.left=x-left+"px";
+      }
+
+
+  }
+
+  login.onmouseup=function(ev){
+      document.onmousemove=null;
+      // console.log(login.offsetTop);
+      // console.log(login.offsetLeft)
+
+  }
+
+
+
+
+
+    var username=document.querySelector(".name");
+    var password=document.querySelector(".pass");
+    var  btn=document.querySelector(".btn input");
+    btn.onclick=function () {
+        var value1 = username.value;
+        var value2=password.value;
+        if(value1==""||value2==""){
+            alert("用户名密码不能为空");
+        }else if(value1=="admin"&&value2=="123456"){
+            alert("登录成功");
+            window.open("send.html");
+        }else if(value1=="admin"&&value2!=="123456"){
+            alert("密码错误");
+           password.value="";
+        }
+
+    }
+
+
+
+
+</script>
+</html>

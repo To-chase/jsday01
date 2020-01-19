@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    // for(var x=1;x<=5;x++){
+    //     for(var n=5;n>=1;n--){
+    //         for(var y=1;y<=x;y++){
+    //             document.write("★");
+    //         }
+    //          document.write(" ");
+    //     }
+    //     document.write("<br>");
+    // }
+    var row=+prompt("请输入行数:")
+
+    // for (var i=0;i<=row;i++){
+    //
+    //     for(var y=0;y<=row-i;y++){
+    //         document.write("☆");
+    //     }
+    //
+    //         for(var x=1;x<=(2*i-1);x++){
+    //             document.write("★");
+    //         }
+    //
+    //
+    //     document.write("<br>");
+    // }
+
+    for(var i=1;i<=row;i++){
+        for(var y=row;y>=i;y--){
+            document.write("&nbsp&nbsp");
+        }
+        for(var x=1;x<=i;x++){
+            document.write("★&nbsp");
+        }
+        document.write("<br>");
+    }
+
+</script>
+<body>
+<!--
+       循环:
+         初次化值
+       while(数据范围){
+         执行语句；
+          计数；
+       }
+
+
+           初次化值
+       do{
+          执行语句；
+          计数；
+       }while(数据范围);
+
+
+       break:终止本次循环
+          只能在switch与循环中使用
+       continue:跳过本次循环，执行下一次循环
+
+
+       死循环
+       while(true){
+          执行语句：
+       }
+
+       for(; ;){//循环三要素都不要
+         执行语句：
+       }
+
+
+-->
+</body>
+</html>

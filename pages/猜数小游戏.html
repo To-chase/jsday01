@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    var rand=Math.floor(Math.random()*100)+1;
+    console.log(rand);
+    var number=5;
+    var num;
+    while(number>=1){
+        num=+prompt("请输入你要猜的数字,你还有"+number+"次机会");
+        if(num===rand){
+            alert("你猜对了!");
+            break;
+        } else if(num>rand){
+            alert("猜大了");
+        }else if(num<rand){
+            alert("猜小了");
+        }
+        number--;
+    }
+</script>
+<body>
+
+</body>
+</html>

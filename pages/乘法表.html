@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    td{
+        border: 1px solid black;
+    }
+
+    td:hover{
+        background-color: blue;
+    }
+</style>
+<script>
+    // var row=+prompt("请输入行数:");
+    document.write("<table>")
+    for(var x=1;x<=9;x++){
+        document.write("<tr>")
+
+        for(var y=1;y<=x;y++){
+            document.write("<td>")
+            document.write(y+"*"+x+"="+(y*x)+"&nbsp");
+            document.write("</td>")
+        }
+        document.write("</tr>")
+    }
+    document.write("</table>")
+</script>
+<body>
+
+</body>
+</html>

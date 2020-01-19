@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+</style>
+<body>
+<textarea></textarea>
+<input type="button" value="发信息">
+<input type="button" value="删除信息" class="del">
+<ul>
+    <li>今天</li>
+</ul>
+</body>
+<script>
+    var text = document.querySelector("textarea");
+    var btn=document.querySelector("input");
+    var ul=document.querySelector("ul");
+    var del=document.querySelector(".del")
+    btn.onclick=function () {
+        var values=text.value;
+        var lenght=values.length;
+        if (lenght===0) {
+            alert("发送信息不能为空~~~~~");
+        }else if(lenght<60){
+            // console.log(del);
+            var li = document.createElement("li")
+            li.innerText=values;
+            text.value="";
+            var lis=document.querySelectorAll("ul li");
+            console.log(lis);
+            lis.insertBefore()
+            ul.appendChild(li);
+        }else {
+            alert("字数过长~~~");
+            text.value="";
+        }
+
+    }
+
+    del.onclick=function () {
+        if(ul.children.length!==0){
+            console.log(ul.children);
+            ul.removeChild(ul.children[ul.children.length-1]);
+        }else {
+            alert("信息栏已没有信息，无法删除");
+        }
+
+
+    }
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .img img{
+        margin-left: 10px;
+    }
+    p img{
+        margin-left: 10px;
+    }
+</style>
+
+<body>
+<div class="img">
+    <img src="img/01.gif" alt="">
+    <img src="img/02.gif" alt="">
+    <img src="img/03.gif" alt="">
+    <img src="img/02.gif" alt="">
+    <img src="img/04.gif" alt="">
+    <img src="img/05.gif" alt="">
+    <img src="img/06.gif" alt="">
+    <img src="img/07.gif" alt="">
+    <img src="img/08.gif" alt="">
+    <img src="img/09.gif" alt="">
+    <img src="img/10gif" alt="">
+    <img src="img/11.gif" alt="">
+    <img src="img/12.gif" alt="">
+</div>
+<div class="send">
+    <p>
+        <img src="img/01.gif" alt="">
+        <img src="img/07.gif" alt="">
+        <img src="img/08.gif" alt="">
+        <img src="img/09.gif" alt="">
+        <img src="img/10gif" alt="">
+        <img src="img/11.gif" alt="">
+        <img src="img/12.gif" alt="">
+    </p>
+</div>
+</body>
+<script>
+    var imgs=document.querySelectorAll("img");
+    var p=document.querySelector(".send p");
+    imgs.forEach(function (value) {
+        value.onclick=function(){
+            var node = value.cloneNode();
+
+            p.appendChild(node);
+        }
+
+    })
+</script>
+</html>

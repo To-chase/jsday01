@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" href="../../css/xiaomi.css">-->
+    <style>
+        .show{
+            width: 1226px;
+            height: 460px;
+            position: relative;
+        }
+
+        .imgshow{
+            width: 1226px;
+            height: 460px;
+        }
+
+        .imgshow img{
+            width: 1226px;
+            height: 460px;
+            position: absolute;
+            transition: all .5s ease;
+        }
+
+        .dian{
+            position: absolute;
+            top: 90%;
+            left: 40%;
+        }
+
+        .quan{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid black;
+            float: left;
+            margin-left: 10px;
+
+        }
+    </style>
+</head>
+<body>
+  <div class="show">
+      <div class="imgshow">
+          <img src="../../img/2.webp">
+          <img src="../../img/3.webp">
+          <img src="../../img/4.webp">
+          <img src="../../img/5.webp">
+      </div>
+      <div class="dian">
+          <!--<div class="quan" onclick="change1()"></div>-->
+          <input type="button" class="quan1" name="0">
+          <input type="button" class="quan1" name="1">
+          <input type="button" class="quan1" name="2">
+          <input type="button" class="quan1" name="3">
+      </div>
+  </div>
+</body>
+<script>
+    // var img=document.querySelector(".imgshow img");
+    // var radius=document.querySelectorAll("input");
+    // console.log(radius);
+    // // var num=2;
+    // function change1() {
+    //     // num++;
+    //     // if(num===6){
+    //     //     num=2;
+    //     // }
+    //     //        radius.src="../../img/2.webp";
+    //
+    //
+    // }
+    var img=document.querySelectorAll(".imgshow img");
+    var input=document.querySelectorAll("input");
+    console.log(img);
+    console.log(input);
+    input.forEach(function (input) {
+        input.onclick=function () {
+            img.forEach(function (imgs) {
+                imgs.style.opacity="0";
+            })
+            img[input.name].style.opacity="1";
+        }
+    })
+
+
+</script>
+</html>

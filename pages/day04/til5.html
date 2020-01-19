@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    //
+    //     var myDate=new Date();
+    //     var hours = myDate.getHours();
+    //
+    //     var minutes = myDate.getMinutes();
+    //     var seconds = myDate.getSeconds();
+    //     var arr=[hours,minutes,seconds];
+    //     if(hours<10){
+    //         return "0"+hours+":"+minutes+":"+seconds;
+    //     }else if(minutes<10){
+    //         return hours+":"+"0"+minutes+":"+seconds;
+    //     }else if(seconds<10){
+    //         return "0"+hours+":"+minutes+":"+"0"+seconds;
+    //     }
+    //     return hours+":"+minutes+":"+seconds;
+    // }
+
+    function formatTime() {
+        var myDate=new Date();
+        time=myDate.getTime();
+        var date=new Date(time);
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        return hours+":"+minutes+":"+seconds;
+    }
+
+    console.log(formatTime());
+</script>
+<body>
+
+</body>
+</html>

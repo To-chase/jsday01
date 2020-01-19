@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    //26)函数封装：
+    // 已知一对小兔子一个月之后可以变成大兔子，
+    // 大兔子每个月可以生一对小兔子，
+    // 以此类推！求到8月能繁殖成多少对？(注：这是不死神兔)
+    // function sum() {
+    //
+    // }
+   function sum(month){
+
+           if(month==1){
+               return 0;
+           }else if(month==2){
+               return 2;
+           }else if(month>3){
+              return sum(month-1)+sum(month+1);
+           }
+
+   }
+   var num=sum(8);
+   console.log(num);
+
+
+</script>
+<body>
+
+</body>
+</html>

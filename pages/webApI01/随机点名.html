@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .inputTxt{
+            height: 500px;
+            width: 600px;
+            font-size: 200px;
+            text-align: center;
+        }
+
+        .choose{
+            height: 500px;
+            width: 600px;
+            text-align: center;
+            position: absolute;
+            top:0;
+            right: 600px;
+        }
+        .name{
+            height: 500px;
+            width: 100%;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="name">
+    <div class="choose">
+    <input type="text" name="myText" value="房政" class="inputTxt"/>
+    <input name="start" type="button" value="开始" onclick="startScroll()"/>
+    <input name="stop" type="button" value="停止" onclick="stopScroll()"/>
+    </div>
+</div>
+</body>
+<script>
+    var time;
+    var arr=['蔡青蓝','邓姗姗','房政','黄文雄',
+        '黄文雄','胡毅','侯艳杰','简俊文','李桥坚'
+        ,'梁志鸿','文豪','文豪','梁德柱','辛振基',
+        '曹聪','罗苑浩','张腈杰','缪锦链','张鹏'];
+    function startScroll() {
+        var num=Math.floor(Math.random()*arr.length);//产生随机数组下标
+        // document.myText.value=arr[num];
+       var text=document.querySelector(".inputTxt");
+        text.value=arr[num];
+        time=setTimeout("startScroll()",60); //使用定时器函数，60毫秒调用函数
+    }
+
+    function stopScroll() {
+         clearTimeout(time);  //清除定时器
+    }
+</script>
+</html>

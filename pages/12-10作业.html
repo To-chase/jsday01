@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //第一题
+    var sum = 0;
+    for (var i = 1; i <= 100; i++){
+        if (i % 3 != 0 && i % 7 != 0){
+            sum = sum + i;
+        }
+    }
+    console.log(sum);
+
+    for(var i = 0; i <= 4; i++){
+        for (var y = 0; y < i; y++){
+            document.write("*");
+        }
+        for (var x = 1; x <= 1; x++){
+            document.write("O");
+        }
+        for (var z = 8; z > 2*i; z-=2){
+            document.write("**");
+        }
+        for (var x = 1; x <= 1; x++){
+            document.write("O");
+        }
+        for (var y = i; y >= 1; y--){
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    for(var i =4; i >= 0; i--){
+        for (var y = 0; y < i; y++){
+            document.write("*");
+        }
+        for (var x = 1; x <= 1; x++){
+            document.write("O");
+        }
+        for (var z = 8; z > 2*i; z-=2){
+            document.write("**");
+        }
+        for (var x = 1; x <= 1; x++){
+            document.write("O");
+        }
+        for (var y = i; y >= 1; y--){
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+
+//第三题
+    for (var x = 1; x <= 9; x++){
+        for (var y = 1; y <= x; y++){
+            document.write(x + "x" + y + '='+ (x * y));
+        }
+        document.write('<br>&nbsp');
+    }
+
+    //第五题
+    var sum5 = 0;
+    for (var i = 1; i <= 100; i++){
+        if (i ==3 ){
+            continue
+        }
+        else if (i % 10 == 3){
+            continue
+        }
+        sum5 = sum5 + i;
+    }
+    console.log(sum5);
+    //第2.2题
+    var arr = [10, 20, 30 ,40, 50];
+    var num = parseInt(arr.length/2);
+    // console.log(num);
+
+    for (var i = 0; i < num; i++){
+        var z = arr[i];
+        arr[i] = arr[arr.length-1-i];
+        arr[arr.length-1-i] = z;
+    }
+    console.log(arr);
+
+
+    //第2.3题
+    var arr1 = [10,20,10,30,40,50,30];
+    var arr2 = [];
+    var count = 0;
+    arr2[0] = arr1[0];
+    for (var i = 1; i < arr1.length; i++){
+        for (var x = 0; x < arr2.length; x++){
+            if (arr1[i] == arr2[x]){
+                count += 1;
+            }
+        }
+        if (count == 0) {
+            arr2[arr2.length] = arr1[i];
+        }
+        else{
+            count = 0;
+        }
+    }
+    console.log(arr2);
+
+
+
+    //第2.4题
+    var arr3 = [1,2,3,2,1];
+    var num3 = parseInt(arr3.length/2);
+    console.log(num3);
+    var count = 0;
+    for (var i = 0; i < num3; i++){
+
+        if (arr3[i] == arr3[arr3.length-1-i]){
+            console.log();
+            count += 1;
+        }
+        else {
+            console.log("非对称数组")
+        }
+        while (count == num3){
+            console.log("对称数组");
+            break;
+        }
+    }
+
+    //第2.5题
+    var arr5 = [5, 1,2,4,3];
+    for(var i = 0; i < arr5.length; i++){
+        for (var j = 0; j < arr5.length-i; j++){
+            if (arr5[j] >= arr5[j+1]){
+                var temp = arr5[j];
+                arr5[j] = arr5[j+1];
+                arr5[j+1] = temp;
+            }
+        }
+    }
+    console.log(arr5);
+
+</script>
+</html>

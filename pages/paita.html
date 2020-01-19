@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            position: relative;
+        }
+        img{
+            width: 750px;
+            height: 400px;
+            position: absolute;
+            transition: all 0.5s linear;
+        }
+        .a{
+            opacity: 0;
+        }
+        .btns{
+            width: 100px;
+            height: 30px;
+            overflow: hidden;
+            position:relative;
+            top: 380px;
+            left: 350px;
+        }
+        .btns div{
+            width: 10px;
+            height: 10px;
+            background-color: aqua;
+            border-radius: 50%;
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="../../../yys/img/method_1.jpg" alt="" class="img1">
+    <img src="../../../yys/img/method_2.jpg" alt="" class="img2">
+    <img src="../../../yys/img/method_3.jpg" alt="" class="img3">
+    <img src="../../../yys/img/author_2.jpg" alt="" class="img4">
+    <img src="../../../yys/img/author_3.jpg" alt="" class="img5">
+    <div class="btns">
+        <div class="btn1"></div>
+        <div class="btn2"></div>
+        <div class="btn3"></div>
+        <div class="btn4"></div>
+        <div class="btn5"></div>
+    </div>
+</div>
+</body>
+<script>
+    var btns = document.querySelectorAll('div');
+    console.log(btns);
+    var imgs = document.querySelectorAll('img');
+    for (var i = 2; i< btns.length; i++){
+        btns[i].onclick = function () {
+            if (this.className === 'btn1'){
+                imgs.forEach(function (value) {
+                    value.classList.add('a')
+                });
+                imgs[0].classList.remove('a');
+            }
+            else if (this.className === 'btn2'){
+
+                imgs.forEach(function (value) {
+                    value.classList.add('a')
+                });
+                imgs[1].classList.remove('a');
+            }
+            else if (this.className === 'btn3'){
+                imgs.forEach(function (value) {
+                    value.classList.add('a')
+                });
+                imgs[2].classList.remove('a');
+            }else if (this.className === 'btn4'){
+                imgs.forEach(function (value) {
+                    value.classList.add('a')
+                });
+                imgs[3].classList.remove('a');
+            }else if (this.className === 'btn5'){
+                imgs.forEach(function (value) {
+                    value.classList.add('a')
+                });
+                imgs[4].classList.remove('a');
+            }
+        }
+    }
+
+
+
+</script>
+</html>

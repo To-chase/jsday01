@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    /*
+    * 对象.方法
+    * 对象.属性
+    *
+    * 日期对象
+    * 变量名=new Date();
+    * 获取年月日时分秒
+    * 年:变量名.getFullYear();
+    * 月:变量名.getMonth()+1;js的etMonth()是从零开始
+    * 日:变量名.getDate();
+    * 时:变量名.getHours();
+    * 分:变量名.getMinutes();
+    * 秒:变量名.getSeconds();
+    *
+    * 获取毫秒
+    * 变量名.getTime();
+    * 毫秒值:
+    * 返回与1970.1.1(时间原点)至今的毫秒值,常用与数据的传输，通用性高
+    * 通过+号运算符快速转换成毫秒值
+    *
+    * Math不用new
+    * Math.ceil();
+    * Math.flood();
+    * Math..random();
+    * */
+
+    var food=['烤山药', '烤番薯', '榨菜', '馒头', '方便面', '地沟油'];
+    var rand=Math.floor(Math.random()*food.length);
+
+    console.log("菜单为:"+food);
+    console.log("今天吃了"+food[rand]);
+</script>
+<body>
+
+</body>
+</html>

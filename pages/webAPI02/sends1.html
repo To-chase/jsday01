@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .box{
+        width: 500px;
+        border: 1px solid orange;
+        margin: 0 auto;
+        position: relative;
+    }
+    .message{
+        width: 400px;
+        height: 180px;
+        border:1px solid;
+        margin: 10px auto;
+
+    }
+   .box input[type=button]{
+       margin-left: 47px;
+       width: 60px;
+       height: 40px;
+       background-color: orange;
+       border-radius: 5px;
+    }
+
+    .box ul{
+        margin: 0 auto;
+    }
+    .box ul li{
+        width: 400px;
+        list-style: none;
+        margin-top: 5px;
+        border-bottom: 1px dashed #cccccc;
+        margin-bottom: 5px;
+    }
+
+
+
+    .box li span{
+        width: 200px;
+        height: 20px;
+        /*border: 1px solid red;*/
+        text-align: left;
+        margin-left: 5px;
+        /*background: #9a6e3a;*/
+
+    }
+
+    .box ul a{
+        float: right;
+        text-decoration: none;
+    }
+
+    .img{
+        width: 140px;
+        height: 22px;
+        position: absolute;
+        top: 211px;
+        left: 165px;
+        /*opacity: 0;*/
+        display: none;
+    }
+
+    .open{
+        width: 22px;
+        height: 22px;
+        position: absolute;
+        display: block;
+        top: 211px;
+        left: 120px;
+        background: url("img/01.gif")no-repeat;
+    }
+
+</style>
+<body>
+<div class="box">
+    <div class="message" contenteditable="true"></div>
+    <input type="button" value="发布">
+    <span class="open"></span>
+    <div class="img">
+        <img src="img/01.gif" alt="">
+        <img src="img/02.gif" alt="">
+        <img src="img/03.gif" alt="">
+        <img src="img/04.gif" alt="">
+        <img src="img/05.gif" alt="">
+    </div>
+    <ul>
+        <li><span>今天好心情</span><a href="#">删除</a></li>
+        <li><span>今天好心情</span><a href="#">删除</a></li>
+    </ul>
+</div>
+<script>
+    var message = document.querySelector(".message");
+    var input=document.querySelector(".box input");
+    var ul=document.querySelector(".box ul");
+
+    var sendMessage=function () {
+        var messageValue = message.innerHTML;
+        console.log(messageValue)
+        if(messageValue===""){
+            alert("不能发送空消息~~");
+        }else if(messageValue.length>120){
+            alert("话太多");
+        }else{
+            var div=document.querySelector("li span div");
+            var li=document.createElement("li");
+            var span=document.createElement("span");
+            var a=document.createElement("a");
+            span.innerHTML=messageValue;
+            li.appendChild(span);
+            a.href="#";
+            a.innerText="删除";
+            li.appendChild(a);
+            if(div!=null){
+                li.removeChild(div);
+            }
+            ul.insertBefore(li,ul.children[0]);
+            message.innerHTML="";
+            console.log(li);
+        }
+    }
+    input.onclick=sendMessage;
+
+    message.onkeyup=function (ev) {
+        if(ev.keyCode===13){
+            sendMessage();
+        }
+    }
+
+    ul.onclick=function (ev) {
+        // console.dir(ev);
+        if(ev.target.nodeName=="A"){
+           ul.removeChild(ev.target.parentElement);
+        }
+        if(ev.target.nodeName=="SPAN"){
+           var input = document.createElement("input");
+           input.type="text";
+           input.value=input.innerHTML;
+           // console.log(input.value)
+            var innerHTML = ev.target.innerHTML;
+            input.value=innerHTML;
+            ev.target.parentElement.replaceChild(input,ev.target);
+            input.focus();
+            input.onblur=function () {
+                var span = document.createElement("span");
+                span.innerHTML=input.value;
+                input.parentElement.replaceChild(span,input);
+            }
+
+        }
+    }
+
+    var open=document.querySelector(".open");
+    var img=document.querySelector(".img");
+    var imgs=document.querySelectorAll(".img img");
+    open.onclick=function () {
+
+        img.style.display=img.style.display=="none"?"block":"none";
+    }
+
+    imgs.forEach(function (value) {
+        value.onclick=function () {
+            var node = value.cloneNode();
+            message.appendChild(node);
+        }
+    })
+
+
+
+    // var a=document.querySelector(".box li a");
+    // console.log(a);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

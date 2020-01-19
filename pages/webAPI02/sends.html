@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .box{
+        width: 500px;
+        border: 1px solid orange;
+        margin: 0 auto;
+    }
+    .message{
+        width: 400px;
+        height: 180px;
+        border:1px solid;
+        margin: 10px auto;
+
+    }
+   .box input{
+       margin-left: 47px;
+       width: 60px;
+       height: 40px;
+       background-color: orange;
+       border-radius: 5px;
+    }
+
+    .box ul{
+        margin: 0 auto;
+    }
+    .box ul li{
+        width: 400px;
+        list-style: none;
+        margin-top: 5px;
+        border-bottom: 1px dashed #cccccc;
+        margin-bottom: 5px;
+        /*height: 20px;*/
+    }
+
+    .box ul span{
+        text-align: left;
+        margin-left: 5px;
+
+    }
+
+    .box ul a{
+        float: right;
+        text-decoration: none;
+    }
+</style>
+<body>
+<div class="box">
+    <div class="message" contenteditable="true"></div>
+    <input type="button" value="发布">
+    <ul>
+        <li><span>今天好心情</span><a href="#">删除</a></li>
+        <li><span>今天好心情</span><a href="#">删除</a></li>
+    </ul>
+</div>
+<script>
+    var message = document.querySelector(".message");
+    var input=document.querySelector(".box input");
+    var ul=document.querySelector(".box ul");
+    // console.log(input);
+    // console.log(ul.children)
+
+    var sendMessage=function () {
+        var messageValue = message.innerText;
+        console.log(messageValue)
+        if(messageValue===""){
+            alert("不能发送空消息~~");
+        }else if(messageValue.length>60){
+            alert("话太多");
+        }else{
+            var li=document.createElement("li");
+            var span=document.createElement("span");
+            var a=document.createElement("a");
+            span.innerHTML=messageValue;
+            li.appendChild(span);
+            a.href="#";
+            a.innerText="删除";
+            li.appendChild(a);
+            ul.insertBefore(li,ul.children[0]);
+            message.innerText="";
+            var a=document.querySelectorAll("ul li a");
+            // console.log(a);
+            // a.forEach(function (value) {
+            //     value.onclick=function () {
+            //         value.parentElement.parentElement.removeChild(value.parentElement);
+            //     }
+            // })
+        }
+    }
+    input.onclick=sendMessage;
+
+    message.onkeyup=function (ev) {
+        if(ev.keyCode===13){
+            sendMessage();
+        }
+    }
+
+    ul.onclick=function (ev) {
+        if(ev.target.nodeName=="A"){
+           ul.removeChild(ev.target.parentElement);
+        }
+        if(ev.target.nodeName=="SPAN"){
+           var input = document.createElement("input");
+           input.type="text";
+           input.value=input.innerText;
+           ev.target.parentElement.appendChild(input);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    textarea{
+        width: 400px;
+        height: 180px;
+    }
+
+    ul li{
+        list-style: none;
+        width: auto;
+    }
+</style>
+<body>
+<textarea></textarea>
+<input type="button" value="发信息">
+<h3>已发信息栏</h3>
+<ul>
+    <li>今天</li>
+</ul>
+</body>
+<script>
+    var text = document.querySelector("textarea");
+    var btn=document.querySelector("input");
+    var ul=document.querySelector("ul");
+    btn.onclick=function () {
+        var values=text.value;
+        var lenght=values.length;
+       if (lenght===0) {
+            alert("发送信息不能为空~~~~~");
+        }else if(lenght<60){
+           var lis=document.querySelectorAll("ul li");
+           var del=document.createElement("input");
+           var num=lis.length-1;
+           del.type="button";
+           del.value="删除";
+           del.name=num;
+            var li = document.createElement("li")
+            li.innerText=values;
+            text.value="";
+            li.appendChild(del);
+            ul.appendChild(li);
+            var list=document.querySelectorAll("ul li input");
+            console.log(list);
+            list.forEach(function (input) {
+                input.onclick=function () {
+                    input.parentElement.parentElement.removeChild(input.parentElement);
+                }
+            })
+        }else {
+            alert("字数过长~~~");
+            text.value="";
+        }
+    }
+
+
+
+
+
+</script>
+</html>

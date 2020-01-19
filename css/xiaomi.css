@@ -1,0 +1,33 @@
+.show{
+    width: 1226px;
+    height: 460px;
+    position: relative;
+}
+
+.imgshow{
+    width: 1226px;
+    height: 460px;
+}
+
+.imgshow img{
+    width: 1226px;
+    height: 460px;
+    position: absolute;
+    transition: all .5s ease;
+}
+
+.dian{
+    position: absolute;
+    top: 90%;
+    left: 40%;
+}
+
+.quan{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+    float: left;
+    margin-left: 10px;
+
+}

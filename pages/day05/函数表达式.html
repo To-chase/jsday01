@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    /**
+     * 函数表达式(没有名字):
+     *
+     *
+     *
+     */
+
+    function sort(){
+       var arr=[];
+        for(var i=0;i<arguments.length;i++){
+            for(var x=0;x<arguments.length-i-1;x++){
+                if(arguments[x]>arguments[x+1]){
+                    var temp=arguments[x];
+                    arguments[x]=arguments[x+1];
+                    arguments[x+1]=temp;
+                }
+
+            }
+        }
+        console.log(arguments);
+        arr[arr.length]=arguments[0];
+        arr[arr.length]=arguments[arguments.length-1];
+        return arr;
+    }
+
+    var sort1 = sort(10,3,-6,-7,9,8);
+    console.log("min:"+sort1[0]);
+    console.log("max:"+sort1[1]);
+
+
+</script>
+<body>
+
+</body>
+</html>

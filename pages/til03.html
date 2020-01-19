@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    var arr=new Array(5);
+    for(var i=0;i<arr.length;i++){
+        arr[i]=+prompt("请第"+(i+1)+"位评委打分:");
+    }
+
+    var min=arr[0];
+    for(var i=0;i<arr.length;i++){
+        if(arr[i]<min){
+            min=arr[i];
+        }
+    }
+    document.write("最小值:"+min);
+    var max=arr[0];
+    for(var i=0;i<arr.length;i++){
+        if(arr[i]>max){
+            max=arr[i];
+        }
+    }
+    document.write("最大值:"+max);
+    var sc=0;
+    var p=0;
+
+    for(var i=0;i<arr.length;i++){
+        sc+=arr[i];
+        p=(sc-min-max)/3;
+    }
+    document.write("平均分为:"+p);
+</script>
+<body>
+
+</body>
+</html>

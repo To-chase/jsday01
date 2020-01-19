@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .box{
+        width: 1260px;
+        height: 100px;
+    }
+    .btn{
+        float: right;
+        width: 120px;
+        height: 120px;
+    }
+    .btn a{
+        width: 120px;
+        height: 120px;
+        background: red;
+    }
+
+    .btn a i{
+        width:100px;
+        height: 30px;
+        background: blue;
+    }
+    .img{
+        width: 1260px;
+        height: 847px;
+    }
+    .img img{
+        position: relative;
+        /*top: -847px;*/
+        top: 0;
+        transition: all 1s ease;
+
+    }
+</style>
+<body>
+  <div class="box">
+      <div class="btn">
+          <a href="">
+              <img src="../../img/box1.PNG">
+          </a>
+      </div>
+      <div class="img">
+          <img src="../../img/wangyi.PNG">
+      </div>
+  </div>
+
+</body>
+<script>
+    var btn1=document.querySelector(".btn");
+    var btn=document.querySelector(".btn a img");
+    var img=document.querySelector(".img");
+    console.log(btn);
+    console.log(img);
+    var flag=true;
+    btn1.onclick=function () {
+            if(flag){
+                btn.src="../../img/box.PNG";
+                // img.style.display="none";
+                img.style.height="0";
+                flag=false;
+                console.log(flag);
+            }else{
+                btn.src="../../img/box1.PNG";
+                // img.style.display="block";
+                img.style.height="847px";
+                flag=true;
+                console.log(flag);
+            }
+    }
+
+
+   // btn.onclick=function () {
+   //
+   //     if(flag){
+   //         btn.src="img/box.PNG";
+   //         // img.style.height="0";
+   //         img.style.display="none";
+   //         img.style.height="0";
+   //         // img.style.opacity="0";
+   //         flag=false;
+   //     }else{
+   //         btn.src="img/box1.PNG";
+   //         // img.style.height="0";
+   //         img.style.display="block";
+   //         img.style.height="847px";
+   //         // img.style.opacity="0";
+   //         flag=true;
+   //     }
+   //
+   //  }
+
+</script>
+</html>

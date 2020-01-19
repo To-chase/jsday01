@@ -1,0 +1,85 @@
+/*清除内外边距  */
+html,
+body,
+h1,
+h3,
+h4,
+h5,
+h6,
+div,
+img,
+input,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p {
+    margin: 0;
+    padding: 0
+}
+
+/*清除浮动*/
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+.clearfix {
+    *zoom: 1
+}
+
+body{
+    font-size: 12px;
+    color: black;
+}
+/*清除a链接的下划线*/
+a {
+    text-decoration: none;
+    color: black;
+}
+/*清除li前面的点*/
+li {
+    list-style: none;
+
+}
+/*相对定位*/
+.pr {
+    position: relative;
+}
+/*左浮动*/
+.fl {
+    float: left;
+}
+/*右浮动*/
+.fr {
+    float: right;
+}
+/*版心，用于固定宽度并且居中显示*/
+.w {
+    width: 1180px;
+    margin: 0 auto;
+}
+.h {
+    width: 1920px;
+    margin: 0 auto;
+}
+/*让图片底线对齐*/
+img {
+    vertical-align: middle;
+}
+
+/*清除边框*/
+button,input{
+    border: none;
+    outline: none;
+}
+
+/*版心类*/
+.w{
+    width: 1180px;
+    margin: 0 auto;
+}

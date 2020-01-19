@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    /*
+    * 链接方式
+    * 不会改变原数组，连接后返回新数组
+    * [].concat(数组1，数组2......);
+    * 数组.concat(数组1);
+    * */
+
+    /*
+    * join("分隔符);
+    * 数组.join("分隔符")；
+    * 返回的是一个字符串；
+    * */
+
+    /*
+    * push(数据1，数据2.......);
+    * push();在数组结尾添加多个数据
+    * 会改变原数组的长度
+    * 把指定的值添加到数组后的新长度。
+    *
+    * unshift();
+    * 在数组开头添加多个数据
+    * 会改变原数组的长度
+    * 返回新长度
+    *
+    * pop();
+    * 会改变原数组的长度
+    * pop() 方法用于删除并返回数组的最后一个元素。
+    * 返回被删除的元素
+    *
+    * shift()
+    * 方法用于把数组的第一个元素从其中删除，
+    * 并返回第一个元素的值。
+    * 该方法会改变数组的长度。
+    * */
+
+    /*
+    * reverse()
+    * reverse() 方法用于颠倒数组中元素的顺序。
+    * 该方法会改变原来的数组，而不会创建新的数组。
+    * */
+
+
+    /*
+    * slice();
+    * 参数一:开始的索引值
+    * 参数二:结束的索引值
+    * 左闭右开
+    * */
+
+    /*
+    *sort();
+    * */
+
+    /*
+    * splice() 方法向/从数组中添加/删除项目，
+    *  然后返回被删除的项目。
+    *  该方法会改变原始数组。
+    *
+    *  参数1:要删除的索引值 第一位是1，最后一位是-1
+    *  参数2:删除的个数，0代表不删除
+    *  参数3:添加的元素，
+    *  返回值:以数组的格式返回，返回的是被删除的数据
+    *  清空数组:参数只写一个0
+    *
+    *
+    *   前添加:splice(0,0,10);
+    *   前删除:splice(0,1);
+    *
+    *    后添加:splice(arr.length,0,数据)
+    *    后删除:splice(-1,1);
+    * */
+
+
+    /*
+     * toLocaleString();
+     * */
+
+
+    /*
+    *
+    * */
+</script>
+<script>
+    var arr1=[1,2,3,4,5,6,7];
+    var arr2=[8,9];
+
+    // var num=arr2.splice(0,0,10);
+     var num=arr2.splice(arr2.length-1,1);
+    console.log(num);
+    console.log(arr2);
+    // var numbers = arr1.concat(arr2);
+    // var concat = [].concat(arr1,arr2);
+    // console.log(numbers);
+    // console.log(concat);
+    // console.log(arr1);
+    // console.log(arr2);
+    // var str = arr1.join("~_~");
+    //
+    // var number = arr1.push(0,10);
+    // console.log(number);
+    // console.log(arr1);
+    // var number1 = arr1.pop();
+    // console.log(number1);
+    // console.log(arr1);
+    // var numbers = arr1.reverse();
+    // console.log(numbers);
+    // var number2 = arr1.shift();
+    // console.log(number2);
+    // var number = arr2.shift();
+    // console.log(number);
+    // console.log(arr2);
+    // var number = arr2.unshift(1,2,4);
+    // console.log(number);
+    // console.log(arr2);
+
+    // for(var i=100;i<1000;i++){
+    //     var ge=i%10;
+    //     var shi=parseInt((i/10)%10);
+    //     var bai=parseInt((i/100)%10);
+    //     var num=ge*ge*ge+bai*bai*bai+shi*shi*shi
+    //     if(num===i){
+    //         console.log(i+"是水仙花数");
+    //     }
+    // }
+
+
+
+
+
+
+</script>
+<body>
+
+</body>
+</html>

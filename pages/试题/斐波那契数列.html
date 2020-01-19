@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    var month=8;
+    var first=1;
+    var second=1;
+    var result=1;
+    for(var i=1;i<=month;i++){
+        if(i===1||i===2){
+            result=1;
+        }else if(i===3){
+            result=2;
+        }else if (i>3){
+           second=first;
+           first=result;
+           result=second+first;
+        }
+        document.write(result+"&nbsp");
+    }
+
+    // first    second     result
+</script>
+<body>
+
+</body>
+</html>

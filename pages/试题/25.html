@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    //25)	封装一个输入半径求圆的面积的函数
+    function mianji(r){
+        var PI=Math.PI;
+        // console.log(PI);
+        var s=PI*r*r;
+        return s;
+    }
+
+    while(true){
+        var r=+prompt("请输入圆的半径:");
+        if(r>0){
+            var s=mianji(r);
+            console.log(s);
+            break;
+        }
+            alert("半径不为负数，请重新输入！");
+    }
+
+
+</script>
+<body>
+
+</body>
+</html>

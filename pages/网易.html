@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            vertical-align: top;
+        }
+        .a1{
+            width: 1255px;
+            height: 675px;
+            overflow: hidden;
+            transition: all 0.5s linear;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <div><img src="a2.png" alt=""></div>
+    <div class="a1"><img src="a1.png" alt=""></div>
+    <input type="button" value="查看更多">
+</div>
+</body>
+<script>
+var input = document.querySelector('input');
+var a1 = document.querySelector('.a1');
+var flag = true;
+input.onclick = function () {
+    if (flag === true){
+        a1.style.height = '0';
+        flag = false;
+        this.value = '展开';
+    }
+    else if (flag === false){
+        flag = true;
+        a1.style.height = '675px';
+        this.value = '收起';
+    }
+}
+
+
+</script>
+</html>

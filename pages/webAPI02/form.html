@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" name="form">
+    密码框:<input type="password" name="password" id="password">
+    <br>
+    单选框:<input type="radio" name="radio" id="radio">
+    <br>
+    复选框:<input type="checkbox" ><input type="checkbox" >
+    <br>
+    文件上传框:<input type="file" name="" id="">
+    <br>
+    下拉框:
+    <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" disabled>3</option>
+    </select>
+</form>
+
+</body>
+<script>
+    var radio=document.querySelector("[type=radio]");
+    console.dir(radio);
+    // radio.disabled="disabled";
+    radio.checked="checked";
+    console.dir(radio);
+    // var disable = radio.disable(true);
+    // radio.disable()
+    // console.dir(disable);
+    var checkbox=document.querySelector("[type=checkbox]");
+    checkbox.checked="checked";
+    checkbox.disabled="disabled";
+    var select=document.querySelector("select");
+    console.log(select);
+    console.log(select.options[2]);
+
+</script>
+</html>

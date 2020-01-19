@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="password" class="password">
+<input type="button" value="查看密码" class="eye" >
+</body>
+<script>
+    var pass=document.querySelector(".password");
+    var eye = document.querySelector(".eye");
+    eye.onclick=function () {
+        // if(flag){
+        //     pass.type="text";
+        //     eye.value="隐藏密码";
+        //     flag=false;
+        // }else{
+        //     pass.type="password";
+        //     eye.value="查看密码";
+        //     flag=true;
+        // }
+        //三元
+        pass.type=pass.type=="password"?"text":"password";
+
+
+    }
+
+
+
+</script>
+</html>

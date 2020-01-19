@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/yys_bg.css">
+</head>
+<body>
+  <div class="bg">
+      <div class="img">
+          <img class="bg_tu" src="../../img/yys_bg.png">
+          <img class="jt" src="../../img/yys_arrow.png">
+          <span>展开</span>
+      </div>
+  </div>
+</body>
+<script>
+    var span=document.querySelector(".img span");
+    var img=document.querySelector(".img");
+    var jt=document.querySelector(".jt");
+    var flag=true;
+    span.onclick=function () {
+        if(flag){
+            img.style.right="-165px";
+             jt.style.transform="rotate(180deg)";
+            flag=false;
+        }else{
+            img.style.right="0";
+            jt.style.transform="rotate(0)";
+            flag=true;
+        }
+
+    }
+
+</script>
+</html>

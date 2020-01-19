@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .line{
+        width: 109px;
+        height: 180px;
+    }
+</style>
+<body>
+<div class="line">
+    <img src="../../img/on.gif">
+    <input type="button" class="open_off" value="关灯">
+</div>
+</body>
+<script>
+    var line=document.querySelector(".line img");
+    var btn=document.querySelector(".open_off");
+    btn.onclick=function () {
+        // line.src="../../img/off.gif";
+         line.src=((line.src==="../../img/on.gif")?"../../img/off.gif":"../../img/on.gif");
+
+    }
+</script>
+</html>

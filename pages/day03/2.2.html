@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>                      //0  1  2  3  4
+    var arr=[10,20,30,40,50];//50 40 30 20 10
+    var temp;
+    for(var i=0;i<arr.length;i++){
+        temp=arr[i];
+        console.log(temp);
+        arr[i]=arr[4-i];
+        arr[4-i]=temp;
+       document.write(arr[i]);
+    }
+
+</script>
+<body>
+
+</body>
+</html>
